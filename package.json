@@ -1,0 +1,29 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+  "frontend-install":"cd frontend && npm install ",
+  "frontend-build":"cd frontend && npm run build",
+  "heroku-postbuild":"npm run frontend-install && npm run frontend-build"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "esm": "^3.2.25",
+    "express": "^4.18.2",
+    "formidable": "^3.5.0",
+    "https": "^1.0.0",
+    "mongoose": "^7.4.0",
+    "nodemon": "^3.0.1",
+    "paytmchecksum": "^1.5.1",
+    "uuid": "^9.0.0"
+  }
+}
