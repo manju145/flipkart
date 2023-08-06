@@ -23,16 +23,12 @@ app.use('/',Router);
 
 
 
-
-const PORT= process.env.PORT || 8080;
+const PORT=  8080;
 
 const USERNAME=process.env.DB_USERNAME
 const PASSWORD=process.env.DB_PASSWORD
 
- const Mongoose_URL=process.env.MongooseURL || `mongodb://${USERNAME}:${PASSWORD}@ac-kz72pr1-shard-00-00.nea1wji.mongodb.net:27017,ac-kz72pr1-shard-00-01.nea1wji.mongodb.net:27017,ac-kz72pr1-shard-00-02.nea1wji.mongodb.net:27017/FLIPKART?ssl=true&replicaSet=atlas-13jygg-shard-0&authSource=admin&retryWrites=true&w=majority`;
-
-
-Connection(Mongoose_URL);
+ Connection(USERNAME,PASSWORD);
 
 if(process.env.NODE_ENV==='production'){
 app.use(express.static('frontend/build'))
@@ -54,7 +50,7 @@ paytmParams['INDUSTRY_TYPE_ID']=process.env.PAYTM_INDUSTRY_TYPE_ID;
 paytmParams['ORDER_ID']=uuid();
 paytmParams['CUST_ID']=process.env.PAYTM_CUST_ID;
 paytmParams['TXN_AMOUNT'] = '100';
-paytmParams['CALLBACK_URL'] = 'callback';
+paytmParams['CALLBACK_URL'] = 'http://localhost:8080/callback';
 paytmParams['EMAIL'] = 'manjuyadav@gmail.com';
 paytmParams['MOBILE_NO'] ='1234567892';
 
