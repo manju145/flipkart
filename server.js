@@ -30,11 +30,12 @@ const PASSWORD=process.env.DB_PASSWORD
 
  Connection(USERNAME,PASSWORD);
 
-if(process.env.NODE_ENV==='production'){
-app.use(express.static('frontend/build'))
-}
 
-app.listen(PORT,()=>console.log(`Server is running successfully on PORT ${PORT} `));
+
+app.listen(process.env.PORT ||8080 ,()=>{
+
+    console.log(`Server is running successfully on PORT ${PORT} `)
+});
 
 
 DefaultData();
