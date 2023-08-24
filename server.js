@@ -13,7 +13,9 @@ import DefaultMobileData from "./defaults/defaultmobile.js";
 dotenv.config();
 
 const app = express();
-
+app.get("/", (req, res) => {
+    res.send("Welcome to Flikart Data backend");
+  });
 
 app.use(bodyParser.json({extended:true}));
 app.use(bodyParser.urlencoded({extended:true}));
@@ -39,7 +41,7 @@ app.listen(process.env.PORT ||8080 ,()=>{
 
 
 DefaultData();
-// DefaultMobileData();
+DefaultMobileData();
 
 
 export let  paytmMerchantKey =process.env.PAYTM_MERCHANT_KEY ;
