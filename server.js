@@ -39,7 +39,7 @@ app.listen(process.env.PORT ||8080 ,()=>{
 
 
 DefaultData();
-DefaultMobileData();
+// DefaultMobileData();
 
 
 export let  paytmMerchantKey =process.env.PAYTM_MERCHANT_KEY ;
